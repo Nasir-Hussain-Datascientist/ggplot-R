@@ -6,3 +6,14 @@ job_title <- c("Professional", "Programmer", "Management", "Clerical", "Develope
 
 
 employee <- data.frame(id, name, job_title)
+
+separate(employee,name,into =c("first_name","last_name"), sep=' ')
+
+
+View(penguins)
+
+penguins %>%
+  mutate(body_mass_kg=body_mass_g/1000,flipper_length_m=flipper_length_mm/1000)
+
+penguins %>% 
+  arrange(bill_length_mm)
