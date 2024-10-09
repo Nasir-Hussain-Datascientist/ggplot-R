@@ -51,3 +51,20 @@ ggsave("plot.png",plot=p,width=6,height=4)
 
 p2<- ggplot(data=data)+geom_point(mapping = aes(x=stays_in_weekend_nights,y=children))
 ggsave("plot2.png",plot=p2,width=6,height=4)
+
+
+#---------------------------------------------------
+
+library(tidyverse)
+library(ggplot2)
+data <- read_csv("hotel_data.csv")
+ggplot(data=data) + geom_bar(mapping=aes(x=distribution_channel))
+ggplot(data=data) + geom_bar(mapping=aes(x=distribution_channel,fill=market_segment)) 
+ggplot(data=data) + geom_bar(mapping=aes(x=distribution_channel)) + 
+  facet_wrap(~deposit_type) +
+  theme(axis.text.x = element_text(angle=90))
+ggplot(data=data) + geom_bar(mapping=aes(x=distribution_channel)) + 
+  facet_wrap(~market_segment) +
+  theme(axis.text.x = element_text(angle=90))
+ggplot(data=data) + geom_bar(mapping=aes(x=hotel,fill=market_segment)) +
+  facet_wrap(~market_segment)
