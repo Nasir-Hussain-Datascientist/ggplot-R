@@ -27,8 +27,11 @@ rename_with(penguins,tolower)
 
 clean_names(penguins)
 
+#___________________-----------_________________________---------------__________
 
+library(tidyverse)
+library(ggplot2)
 
-
-
+ggplot(data=diamonds)+
+  geom_bar(mapping = aes(x=cut,fill=clarity,))
 
