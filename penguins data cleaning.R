@@ -1,15 +1,10 @@
 library(tidyverse)
 
-penguins %>% arrange(-bill_length_mm)
-penguins2 <- penguins %>%  arrange(-bill_length_mm)
+library(ggplot2)
+
+library(palmerpenguins)
 
 
-
-
-penguins %>%
-  group_by(island,species) %>% 
-  drop_na() %>% 
-  summarize(max_bill_length_mm=max(bill_length_mm),mean_bill_length_mm=mean(bill_length_mm))
-  
-
-penguins %>%  filter(species == "Adelie")
+View(penguins)
+ggplot(penguins) + geom_point(mapping = aes(x=flipper_length_mm,y=body_mass_g))
+ggplot(penguins,aes(x=bill_length_mm,y=bill_depth_mm)) + geom_point()
