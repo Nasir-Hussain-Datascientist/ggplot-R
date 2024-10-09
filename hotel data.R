@@ -29,3 +29,10 @@ library(skimr)
 
 data <- read_csv("hotel_data.csv")
 
+glimpse(data)
+data %>% 
+  arrange(lead_time)
+arrange(data,-lead_time)
+mean(data$lead_time)
+city_hotels <- filter(data,data$hotel=="City Hotel")
+city_hotels
