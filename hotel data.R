@@ -36,3 +36,18 @@ arrange(data,-lead_time)
 mean(data$lead_time)
 city_hotels <- filter(data,data$hotel=="City Hotel")
 city_hotels
+
+
+#_------------------------------------------------------------------
+
+library(tidyr)
+library(ggplot2)
+
+data <- read_csv("hotel_data.csv")
+
+
+p<-ggplot(data = data)+geom_point(mapping=aes(x=lead_time,y=children))
+ggsave("plot.png",plot=p,width=6,height=4)
+
+p2<- ggplot(data=data)+geom_point(mapping = aes(x=stays_in_weekend_nights,y=children))
+ggsave("plot2.png",plot=p2,width=6,height=4)
