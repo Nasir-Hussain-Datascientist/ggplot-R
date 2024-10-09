@@ -18,4 +18,14 @@ df3 <- df %>%
 
 df6 <- df %>% 
   mutate((guests = adults + children + babies))
-  
+#-----------------------------------------------------------------------------
+
+
+
+library(tidyverse)
+library(janitor)
+library(skimr)
+
+
+data <- read_csv("hotel_data.csv")
+
