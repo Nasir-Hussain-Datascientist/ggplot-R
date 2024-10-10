@@ -68,3 +68,45 @@ ggplot(data=data) + geom_bar(mapping=aes(x=distribution_channel)) +
   theme(axis.text.x = element_text(angle=90))
 ggplot(data=data) + geom_bar(mapping=aes(x=hotel,fill=market_segment)) +
   facet_wrap(~market_segment)
+
+
+cityhotels <- filter(data, 
+                               (hotel=="City Hotel" & 
+                                  data$market_segment=="Online TA"))
+
+
+ggplot(data = cityhotels) +
+  geom_point(mapping = aes(x = lead_time, y = children))
+
+
+View(cityhotels)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
